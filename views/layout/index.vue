@@ -10,32 +10,43 @@
             <sideBar class="sideBar"></sideBar>
           </el-col>
           <el-col :span="21">
-            <czMain></czMain>
+            <navBar class="navBar"></navBar>
+            <czMain class="theMain"></czMain>
           </el-col>
       </el-row>
   </div>
 </template>
 
 <script>
-import { czHeader,sideBar,czMain } from './index.js'
+import { czHeader,sideBar,czMain,navBar } from './index.js'
 export default {
     components:{
         czHeader,
         sideBar,
+        navBar,
         czMain
     }
 }
 </script>
 
-<style scoped>
-/* .main{
-    min-width: 1024px;
-} */
+<style lang="scss" scoped>
 .czHeader{
   height:5vh;
   background:darkcyan;
+  box-sizing: border-box;
 }
 .sideBar{
+  box-sizing: border-box;
   height:95vh;
+}
+.navBar{
+  height:5.5vh;
+}
+.theMain{
+  height:88vh;
+  overflow-y: scroll;
+}
+  ::-webkit-scrollbar {
+  display: none; /* Chrome Safari */
 }
 </style>
